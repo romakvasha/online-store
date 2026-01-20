@@ -7,7 +7,7 @@ footer, .address .maps .text, .address > div, .content8 > div, .menu figure div,
   align-content: center;
 }
 
-footer div, footer ul, form, .address .maps, .menu figure {
+footer div, footer ul, form .btn, form, .address .maps, .menu figure {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -32,13 +32,28 @@ nav {
   max-width: 1728px;
   min-height: 100px;
   margin: 0 auto;
-  padding: 0 244px;
+  padding: 0 2rem;
   font-size: x-large;
 }
 nav .collapse {
   justify-content: flex-end;
 }
 nav .collapse ul {
+  align-items: center;
+}
+@media (min-width: 1400px) {
+  nav {
+    padding: 0 244px;
+  }
+}
+nav .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+nav .navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -308,6 +323,13 @@ main {
   max-width: 742px;
 }
 
+@media (min-width: 375px) and (max-width: 1320px) {
+  .menu {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
 .menu figure {
   border-radius: 27px;
   background: #fff;
@@ -402,6 +424,7 @@ main {
 }
 
 form {
+  margin-bottom: 100px;
   height: 530px;
   max-width: 100%;
 }

@@ -57,7 +57,7 @@ nav {
     max-width: 1728px;
     min-height: 100px;
     margin: 0 auto;
-    padding: 0 244px;
+    padding: 0 2rem; // responsive default padding
     font-size:x-large;
     .collapse{
         justify-content: flex-end;
@@ -66,8 +66,24 @@ nav {
         }
         
     }
+    // larger spacing on very wide screens (restore original visual for desktop)
+    @media (min-width: 1400px) {
+      padding: 0 244px;
+    }
 
+    // bootstrap nav tweaks to stabilize layout
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .navbar-collapse {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
 }
+
 .login  {
     margin: 20px;
     min-height: 56px;
@@ -315,7 +331,8 @@ main {
 
 .menu{
     @extend %flex-row;
-
+    @include media-width(80%);
+    
     figure{
         border-radius: 27px;
         background: $color_2;
@@ -424,7 +441,7 @@ main {
 }
 form{
     @extend %flex-column;
-    
+    margin-bottom: 100px;
     height: 530px;
     max-width: 100%;
         input{
@@ -445,6 +462,7 @@ form{
             }
         }
         .btn{
+            @extend %flex-column;
             width: 530px;
             height: 48px;
             border-radius: 10px; 
