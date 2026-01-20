@@ -271,22 +271,22 @@ main {
         margin: 0 auto;
         margin-bottom: 100px;
         .img1{
+            @include img(url(/img/card\ \(1\).png));
             p{
                 text-align: center;
             }
-            @include img(url(/img/card\ \(1\).png));
         }
         .img2{
+            @include img(url(/img/card\ \(2\).png));
             p{
                 text-align: center;
             }
-            @include img(url(/img/card\ \(2\).png));
         }
         .img3{
+            @include img(url(/img/card\ \(3\).png));
             p{
                 text-align: center;
-            }
-            @include img(url(/img/card\ \(3\).png));        
+            }       
         }
     }
 }
@@ -406,6 +406,21 @@ main {
 }
 .mapswrapper {
     margin-bottom: 20px;
+    background: #fff;
+    position: relative;
+    iframe {
+        border: 0;
+        position: relative;
+        z-index: 2;
+    }
+    a {
+        color: rgba(0, 0, 0, 0);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        text-decoration: none;
+    }
 }
 form{
     @extend %flex-column;
@@ -589,4 +604,55 @@ footer{
       transform: scale(1);
     }
   }
-  
+
+:root {
+  --color-primary: #FF6F40;
+  --color-contrast: #fff;
+  --focus-ring: 3px solid rgba(255,111,64,0.28);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--color-contrast);
+  color: #000;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* focus styles for keyboard users */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.themeToggleInput:focus-visible {
+  outline: var(--focus-ring);
+  border-radius: 6px;
+}
+
+/* form label basics */
+.form-label {
+  display: block;
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0.5rem;
+}
+

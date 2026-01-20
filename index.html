@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Eco Eats — Organic Meals</title>
+    <meta name="description" content="Eco Eats — Organic, sustainable meals delivered fresh. Portfolio demo site." />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,71 +15,60 @@
     <link rel="stylesheet" type="text/css" href="nav.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
       <div class="container-fluid">
         <div class="dark-topic"></div>
         <a class="navbar-brand" href="#">
-          <img
-            src="/img/logo.png"
-            alt="Logo"
-            class="d-inline-block align-text-center"
-          />
+          <img src="/img/logo.png" alt="Logo" class="d-inline-block align-text-center" />
           EcoEats
         </a>
-        <label
-            for="themeToggle"
-            class="themeToggle st-sunMoonThemeToggleBtn"
-            type="checkbox"
-          >
-            <input type="checkbox" id="themeToggle" class="themeToggleInput" />
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="none"
-            >
-              <mask id="moon-mask">
-                <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-                <circle cx="11" cy="3" r="8" fill="black"></circle>
-              </mask>
+
+        <!-- Theme toggle: accessible switch -->
+        <label class="themeToggle st-sunMoonThemeToggleBtn" aria-hidden="false">
+          <input type="checkbox" id="themeToggle" class="themeToggleInput" role="switch" aria-label="Toggle color theme" aria-checked="false" />
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+            <mask id="moon-mask">
+              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+              <circle cx="11" cy="3" r="8" fill="black"></circle>
+            </mask>
+            <circle
+              class="sunMoon"
+              cx="10"
+              cy="10"
+              r="8"
+              mask="url(#moon-mask)"
+            ></circle>
+            <g>
+              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
               <circle
-                class="sunMoon"
-                cx="10"
-                cy="10"
-                r="8"
-                mask="url(#moon-mask)"
+                class="sunRay sunRay2"
+                cx="14"
+                cy="16.928"
+                r="1.5"
               ></circle>
-              <g>
-                <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
-                <circle
-                  class="sunRay sunRay2"
-                  cx="14"
-                  cy="16.928"
-                  r="1.5"
-                ></circle>
-                <circle
-                  class="sunRay sunRay3"
-                  cx="6"
-                  cy="16.928"
-                  r="1.5"
-                ></circle>
-                <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-                <circle
-                  class="sunRay sunRay5"
-                  cx="6"
-                  cy="3.1718"
-                  r="1.5"
-                ></circle>
-                <circle
-                  class="sunRay sunRay6"
-                  cx="14"
-                  cy="3.1718"
-                  r="1.5"
-                ></circle>
-              </g>
-            </svg>
-          </label>
+              <circle
+                class="sunRay sunRay3"
+                cx="6"
+                cy="16.928"
+                r="1.5"
+              ></circle>
+              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+              <circle
+                class="sunRay sunRay5"
+                cx="6"
+                cy="3.1718"
+                r="1.5"
+              ></circle>
+              <circle
+                class="sunRay sunRay6"
+                cx="14"
+                cy="3.1718"
+                r="1.5"
+              ></circle>
+            </g>
+          </svg>
+        </label>
 
         <button
           class="navbar-toggler"
@@ -116,12 +106,6 @@
               </button>
             </li>
           </ul>
-          <script>
-            const button = document.querySelector("#themeToggle");
-            button.addEventListener("click", () => {
-              document.body.classList.toggle("dark-theme");
-            });
-          </script>
         </div>
       </div>
     </nav>
@@ -311,7 +295,7 @@
           </div>
         </article>
       </section>
-      <section class="content6">
+      <section id="main-content" class="content6">
         <div>
           <h1>
             Sustainable Journey from Farm to Table at <span>Eco Eats</span>
@@ -324,11 +308,7 @@
               produce to the time we serve your meal, quality is our top
               priority.
             </p>
-            <button type="button" class="btn btn-lg px-4">
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">See All Menu</font></font
-              >
-            </button>
+            <a class="btn btn-lg px-4" href="#menu" role="button">See all menu</a>
           </div>
         </div>
         <figure>
@@ -350,67 +330,6 @@
             </p>
           </div>
         </figure>
-      </section>
-      <section class="content7">
-        <div>
-          <h1>Power Bowls</h1>
-          <p>
-            Crafted with fresh, organic ingredients, each bowl is a perfect
-            balance of proteins, healthy fats, and vibrant vegetables. Whether
-            you're seeking a plant-based boost or a protein-packed meal, our
-            Power Bowls provide wholesome, delicious options that nourish and
-            satisfy.
-          </p>
-        </div>
-        <div class="menu">
-          <figure>
-            <img src="/img/Image.png" alt="" />
-            <figcaption>
-              <h4>Green Energy Bowl</h4>
-              <p>Packed with superfoods to fuel your day.</p>
-              <div>
-                <h3>$10.99</h3>
-                <button type="button" class="btn btn-warning">Order Now</button>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="/img/Image+Avatar.png" alt="" />
-            <figcaption>
-              <h4>Mediterranean Bliss Bowl</h4>
-              <p>A taste of the Mediterranean, bursting with flavor.</p>
-              <div>
-                <h3>$11.49</h3>
-                <button type="button" class="btn btn-warning">Order Now</button>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="/img/Image (1).png" alt="" />
-            <figcaption>
-              <h4>Protein Powerhouse Bowl</h4>
-              <p>The perfect balance of protein and nutrition.</p>
-              <div>
-                <h3>$12.49</h3>
-                <button type="button" class="btn btn-warning">Order Now</button>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="/img/Image (2).png" alt="" />
-            <figcaption>
-              <h4>Tropical Bowl</h4>
-              <p>A refreshing blend of tropical flavors.</p>
-              <div>
-                <h3>$11.99</h3>
-                <button type="button" class="btn btn-warning">Order Now</button>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
       </section>
       <section class="content7">
         <div>
@@ -511,61 +430,62 @@
         <div>
           <div class="maps">
             <div class="mapswrapper">
+              <!-- replaced API-keyed embed with non-key embed -->
               <iframe
                 width="100%"
                 height="304"
                 loading="lazy"
                 allowfullscreen
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=New%20York&zoom=10&maptype=roadmap"
-              ></iframe
-              ><a href="https://www.fluxpromptgenerator.net"
-                >Flux Prompt Generator</a
-              ><style>
-                .mapswrapper {
-                  background: #fff;
-                  position: relative;
-                }
-                .mapswrapper iframe {
-                  border: 0;
-                  position: relative;
-                  z-index: 2;
-                }
-                .mapswrapper a {
-                  color: rgba(0, 0, 0, 0);
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  z-index: 0;
-                }
-              </style>
+                src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              ></iframe>
             </div>
 
             <div class="text">
               <div>
                 <h3>Eco Eats NYC</h3>
-                <p>123 Greenway AvenueNew York, NY 10001(212) 555-1234</p>
+                <address>
+                  123 Greenway Avenue<br/>New York, NY 10001<br/><a href="tel:+12125551234"> (212) 555-1234</a>
+                </address>
               </div>
               <div>
                 <h3>Hours of Operation</h3>
                 <p>
-                  Monday Friday: 8 AM 8 PMSaturday: 9 AM 9 PM Sunday: 9 AM b6 PM
+                  Monday–Friday: 8 AM–8 PM<br/>Saturday: 9 AM–9 PM<br/>Sunday: 9 AM–6 PM
                 </p>
               </div>
             </div>
           </div>
 
-          <form action="">
-            <input placeholder="Name" />
-            <input placeholder="Email Address" />
-            <input placeholder="Phone Number" />
-            <input placeholder="Date" />
-            <input placeholder="Time" />
-            <input placeholder="Number of Guests" />
-            <input placeholder="Special Requests" />
-            <button type="button" class="btn btn-warning">Reserve Now</button>
+          <form action="#" method="post" aria-label="Reservation form">
+            <fieldset>
+              <legend class="visually-hidden">Reservation details</legend>
+              <label for="r-name" class="form-label">Name</label>
+              <input id="r-name" name="name" type="text" placeholder="Name" required />
+
+              <label for="r-email" class="form-label">Email</label>
+              <input id="r-email" name="email" type="email" placeholder="Email address" required />
+
+              <label for="r-phone" class="form-label">Phone</label>
+              <input id="r-phone" name="phone" type="tel" placeholder="Phone number" />
+
+              <label for="r-date" class="form-label">Date</label>
+              <input id="r-date" name="date" type="date" />
+
+              <label for="r-time" class="form-label">Time</label>
+              <input id="r-time" name="time" type="time" />
+
+              <label for="r-guests" class="form-label">Guests</label>
+              <input id="r-guests" name="guests" type="number" min="1" max="20" placeholder="Number of guests" />
+
+              <label for="r-requests" class="form-label">Special requests</label>
+              <textarea id="r-requests" name="requests" placeholder="Special requests" rows="2"></textarea>
+
+              <button type="submit" class="btn btn-warning">Reserve now</button>
+            </fieldset>
           </form>
-        </div>
-      </section>
+
+         </div>
+       </section>
     </main>
     <footer>
       <div class="footer">
@@ -599,10 +519,28 @@
         <img src="/img/Frame 427319178.png" alt="" />
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <!-- moved scripts to bottom; modernized theme toggle with persistence -->
+    <script>
+      (function () {
+        const input = document.getElementById('themeToggle');
+        const THEME_KEY = 'eco-eats-theme';
+        const applyTheme = (isDark) => {
+          document.body.classList.toggle('dark-theme', isDark);
+          input.setAttribute('aria-checked', isDark ? 'true' : 'false');
+        };
+        const saved = localStorage.getItem(THEME_KEY);
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initial = saved !== null ? saved === 'dark' : prefersDark;
+        input.checked = initial;
+        applyTheme(initial);
+        input.addEventListener('change', () => {
+          const isDark = input.checked;
+          applyTheme(isDark);
+          localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+        });
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
   </body>
 </html>
